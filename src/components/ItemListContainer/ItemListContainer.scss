@@ -1,0 +1,18 @@
+.ItemListContainer{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        font-size: 80px;
+        @media (max-width: 760px){
+            font-size: 40px;
+        }
+    }
+
+    img{
+        border-radius: 100%;
+        border: solid black;
+    }
+}

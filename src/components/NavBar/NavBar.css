@@ -1,0 +1,77 @@
+.navbar{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+background-color: rgb(0, 200, 255);
+
+@media (max-width: 760px){
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+}
+    .brand{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        @media (max-width: 760px){
+            display: flex;
+            flex-direction: column;
+            padding: 0px 10px;
+        }
+        
+        p{
+            padding: 5px;
+            color: rgb(0, 0, 120);
+            @media (max-width: 760px){
+                font-size: 20px;
+                padding: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    .opc{
+        display: flex;
+        gap: 10px;
+        padding: 0;
+
+        @media (max-width: 760px){
+            flex-direction:column;
+            padding: 0px 20px;
+        }
+
+        .btnWeb{ 
+            display: inline-block;
+            text-align: center;
+            justify-content: center;
+            padding: 5px 10px;
+            background-color: rgb(0, 200, 255);
+            border-radius: 20px;
+            border: solid white;
+            &:hover{
+                background-color: yellow;
+            }
+        }
+    }
+
+    .carrito{
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 760px){
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        p{
+            background-color: rgb(0, 0, 120);
+            color:white;
+            font-size: 10px;
+            border-radius: 100%;
+            padding: 5px 8px;
+        }
+    }
+}
+
