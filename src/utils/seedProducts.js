@@ -1,3 +1,6 @@
+import db from "../db/db.js"
+import { addDoc, collection } from "firebase/firestore"
+
 const opc = [
     {
         id: "pizza1",
@@ -35,7 +38,7 @@ const opc = [
         descripcion: "Rollo elaborado de una pasta rellena con verduras picadas al estilo juliana. No poseen carne. Apto para vegetarianos.",
         stock: 7,
         categoria: "china",
-        imagen: "https://sushikatsu.cl/wp-content/uploads/2022/09/ARROLLADO-PRIMAVERA-scaled.jpg",
+        imagen: "https://th.bing.com/th?id=OIP.1sJuXg4t6yFBaPEO_CMOCgHaFC&w=303&h=206&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
         precio: 2990
     },
 
@@ -60,12 +63,13 @@ const opc = [
     },
 ]
 
-const obtenerOpciones = () => {
-    return new Promise( (resolve, reject) =>{
-        setTimeout(()=>{
-            resolve(opc)
-        },2000)
-    })
+const seedProducts = () => {
+    opc.map(( {id, ...rest} )=>{
+        //El 'productos' dentro del parentesis de collection hace referencia al nombre indicado en el Firebase
+        const productosRef = collection(db, "productos")
+        addDoc(productosRef, rest)
+    });
+    return
 }
 
-export {obtenerOpciones}
+seedProducts()

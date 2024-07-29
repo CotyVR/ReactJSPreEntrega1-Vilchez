@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react"
-import {obtenerOpciones} from "../../data/data.js"
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom"
+import db from "../../db/db.js"
+import {doc, getDoc} from "firebase/firestore"
 import { CircleLoader } from "react-spinners"
+
+
 
 const ItemDetailContainer = () => {
     //Icono "Cargando página"
@@ -11,22 +14,25 @@ const ItemDetailContainer = () => {
     const [opc, setOpc] = useState ({})
     const { idOpc } = useParams()
 
+    const obtenerProducto = () => {
+        const docRef = doc( db, "productos", idOpc )
+        getDoc(docRef)
+            .then((respuesta) =>{
+                const data = { id: respuesta.id, ...respuesta.data() }
+                setOpc(data)
+            })
+    }
+
     useEffect(() => {
-        //"Cargando página" --> Mostrar pantalla de carga
+        obtenerProducto()
+
+        /* //"Cargando página" --> Mostrar pantalla de carga
         setCargando(true)
-
-        //Datos
-        obtenerOpciones()
-        .then((data)=> {
-            const opcFiltrado = data.find((opcData) => opcData.id === idOpc)
-            setOpc(opcFiltrado)
-        })
-
 
         .finally(() => {
             //Ocultar pantalla de carga
             setCargando (false)
-        });
+        }); */
 
     }, [])
 
