@@ -53,8 +53,8 @@ const Checkout = () => {
     <div className="checkout">
       {idOrden ? (
         <div>
-          <h2>Orden generada con exito!! 😁</h2>
-          <p>guarde el id de su orden: {idOrden} </p>
+          <h2>Su orden ha sido ingresada!!</h2>
+          <p>Se recomienda guardar el id de su orden, el cual es: {idOrden} </p>
         </div>
       ) : (
         <Formulario

@@ -1,27 +1,36 @@
 .item-count {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-  }
-  .item-count .controls-count {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .controls-count button {
-    width: 40px;
-    height: 40px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(66, 66, 66);
-  }
-  .item-count .add {
-    width: auto;
-    height: 40px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(66, 66, 66);
-  }
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.item-count .controls-count {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.controls-count button {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: solid white;
+  background-color: rgb(0, 200, 255);
+}
+
+.controls-count button:hover{
+  background-color: yellow;
+  border-radius: 5px;
+  border: solid black;
+}
+.item-count .add {
+  width: auto;
+  height: 40px;
+  border-radius: 20px;
+  border: solid white;
+  background-color: rgb(0, 200, 255);
+}
+
+.item-count .add:hover {
+  background-color: yellow;
+  border-radius: 20px;
+  border: solid black;
+}

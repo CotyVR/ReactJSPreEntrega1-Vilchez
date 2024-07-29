@@ -12,7 +12,7 @@ const Carrito = () => {
   if (carrito.length === 0) {
     return (
       <div className="cart-empty">
-        <h2>No hay productos en el carrito 😥</h2>
+        <h2>Carrito vacío</h2>
         <Link to="/">Ver productos</Link>
       </div>
     );
