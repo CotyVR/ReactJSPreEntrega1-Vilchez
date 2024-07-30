@@ -1,5 +1,4 @@
 .item-count {
-  width: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -16,7 +15,7 @@
   background-color: rgb(0, 200, 255);
 }
 
-.controls-count button:hover{
+.controls-count button:hover {
   background-color: yellow;
   border-radius: 5px;
   border: solid black;

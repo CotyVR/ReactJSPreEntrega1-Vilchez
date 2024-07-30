@@ -1,43 +1,59 @@
+//Vinculos
 import { CartContext } from "../../context/CartContext";
+
+//Librerias
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { IoTrash } from "react-icons/io5";
+import { BsFillTrash3Fill } from "react-icons/bs";
+
+//Estetica
 import "./Carrito.css";
 
 const Carrito = () => {
-  const { carrito, borrarProductoPorId, vaciarCarrito, precioTotal } = useContext(CartContext);
+  const { carrito, borrarProductoPorId, vaciarCarrito, precioTotal } =
+    useContext(CartContext);
 
   //Early Return, Return temprano
 
   if (carrito.length === 0) {
     return (
       <div className="cart-empty">
-        <h2>Carrito vacío</h2>
-        <Link to="/">Ver productos</Link>
+        <h2>No hay productos en su carrito</h2>
+        <Link to="/" className="btnWeb">
+          Ver productos
+        </Link>
       </div>
     );
   }
 
   return (
     <div className="cart">
-      <h2>Productos en el carrito 🛒</h2>
+      <h2>Productos seleccionados</h2>
       {carrito.map((productoCarrito) => (
         <div className="card-cart" key={productoCarrito.id}>
           <img src={productoCarrito.imagen} width={100} alt="" />
           <p>{productoCarrito.nombre}</p>
           <p>precio c/u: ${productoCarrito.precio}</p>
           <p>cantidad: {productoCarrito.cantidad}</p>
-          <p>total parcial: {productoCarrito.precio * productoCarrito.cantidad}</p>
+          <p>
+            total parcial: {productoCarrito.precio * productoCarrito.cantidad}
+          </p>
 
-          <IoTrash size={40} color="red" onClick={() => borrarProductoPorId(productoCarrito.id)} />
+          <BsFillTrash3Fill
+            size={30}
+            color="red"
+            onClick={() => borrarProductoPorId(productoCarrito.id)}
+          />
         </div>
       ))}
-      <p>Precio Total: {precioTotal()}</p>
+      <h3>Total a pagar: {precioTotal()}</h3>
       <button className="delete-cart" onClick={vaciarCarrito}>
-        <IoTrash size={40} color="red" />
+        <BsFillTrash3Fill size={45} color="red" />
         <p>Vaciar carrito</p>
       </button>
-      <Link className="continue-cart" to="/checkout">Continuar con la compra</Link>
+      <Link className="continue-cart" to="/checkout">
+        Continuar con la compra
+      </Link>
     </div>
   );
 };

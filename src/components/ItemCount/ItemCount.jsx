@@ -1,4 +1,7 @@
+//Libreria
 import { useState } from "react";
+
+//Estetica
 import "./ItemCount.css";
 
 const ItemCount = ({ agregarAlCarrito, stock }) => {
@@ -24,7 +27,9 @@ const ItemCount = ({ agregarAlCarrito, stock }) => {
         <button onClick={sumarContador}>+</button>
       </div>
 
-      <button className="add" onClick={() => agregarAlCarrito(contador)}>Agregar al carrito</button>
+      <button className="add" onClick={() => agregarAlCarrito(contador)}>
+        Agregar al carrito
+      </button>
     </div>
   );
 };

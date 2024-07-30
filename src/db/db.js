@@ -12,11 +12,11 @@ const firebaseConfig = {
   projectId: "primer-ecommerce-eeb0d",
   storageBucket: "primer-ecommerce-eeb0d.appspot.com",
   messagingSenderId: "851385740250",
-  appId: "1:851385740250:web:6e9dacbef680a5da8aeee3"
+  appId: "1:851385740250:web:6e9dacbef680a5da8aeee3",
 };
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
-const db = getFirestore ()
+const db = getFirestore();
 
 export default db;

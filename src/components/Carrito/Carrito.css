@@ -1,41 +1,79 @@
 .cart-empty {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .cart {
-    padding: 0 50px;    
-  }
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 25px;
+}
+
+.cart-empty .btnWeb {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  background-color: rgb(0, 200, 255);
+  border-radius: 20px;
+  border: solid white;
+}
+
+.cart-empty .btnWeb:hover {
+  background-color: yellow;
+  border: solid black;
+}
+
+.cart {
+  margin: 0 20px;
+}
+
+.card-cart {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
   .card-cart {
-    width: 100%;
-    padding: 50px 0;
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px 20px;
     align-items: center;
-    margin: "50px 0";
   }
-  .card-cart img{
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    object-position: center;
-  }
-  .delete-cart{
-    display: flex;
-    background-color: rgb(67, 67, 67);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    margin: 40px 0;
-  }
-  .continue-cart{
-    background-color: rgb(67, 67, 67);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 30px;
-  }
+}
+
+.card-cart img {
+  width: 150px;
+  height: 150px;
+}
+
+.delete-cart {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  margin: 40px 0;
+  padding: 5px;
+  gap: 5px;
+}
+
+.continue-cart {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  background-color: rgb(0, 200, 255);
+  border-radius: 20px;
+  border: solid white;
+}
+
+.continue-cart:hover {
+  background-color: yellow;
+  border: solid black;
+}
